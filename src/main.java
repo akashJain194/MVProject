@@ -2,6 +2,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class main {
+    static String[] formal_words = {"therefore", "however", "regarding", "per", "due", "hello", "dear", "regards", "regard"};
+    static String[] informal_words = {};
+
     public static void main(String[] args) {
 
     }
@@ -21,5 +24,8 @@ public class main {
         if(percentOfAnswer >= 0.1) return true;
         else return false;
     }
+
+
+
 }
 
