@@ -1,10 +1,14 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
 
-    }
+    } //TODO: Add a parse file method so we can parse the datafiles
+
 
     public boolean relevance(WordBucket questionWords, WordBucket answerWords) {
         int count = 0;
@@ -23,7 +27,8 @@ public class main {
         if (percentOfAnswer >= thresholdForRelevance) return true;
         else return false;
     }
-
+    //TODO: figure out what the a, b, c, d constants need to be so we can scale it to 10
+    //TODO: add flesch kincaid score
 /* TODO: FINISH THIS METHOD-->
 
     public boolean isProfessional(Document response){
