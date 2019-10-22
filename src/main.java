@@ -11,9 +11,9 @@ public class main {
         ArrayList<WordFreq> qWords = questionWords.getWords();
         ArrayList<WordFreq> aWords = answerWords.getWords();
         for (int i = 0; i < aWords.size(); i++) {
+            String aWord = aWords.get(i).getWord();
             for (int j = 0; j < qWords.size(); j++) {
-                String aWord = aWords.get(i).getWord();
-                String qWord = qWords.get(i).getWord();
+                String qWord = qWords.get(j).getWord();
                 if(aWord.equals(qWord)) count++;
             }
         }
