@@ -17,7 +17,7 @@ public class main {
             for (int j = 0; j < qWords.size(); j++) {
                 String aWord = aWords.get(i).getWord();
                 String qWord = qWords.get(i).getWord();
-                if(aWord.equals(qWord)) count++;
+                if(aWord.equals(qWord)) count+=aWords.get(i).getFrequency();
             }
         }
         double percentOfAnswer = (double)(count) / aWords.size();
