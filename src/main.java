@@ -25,7 +25,7 @@ public class main {
     public boolean isProfessional(Document response){
         int a, b, c, d; //factors for the equation
         return (response.get_multi_syllabic_percent()*a + b*response.get_formal() - c*response.get_informal()
-        + d*response.get_kincaid_score());
+        + d*response.get_kincaid_score()) >= 5;
     }
 
     private static ArrayList<Integer> getSyllableList(ArrayList<Word> testWords) {
