@@ -48,28 +48,6 @@ public class Sentence {
         return main.getSyllablesFromString(s);
     }
 
-//    private static int end_of_chain(String s, int idx) {
-//        if(idx >= s.length()-1) return idx;
-//        idx++;
-//        String cur = s.substring(idx, idx+1);
-//        while(idx < s.length()-1 && "aeiouy".contains(cur)){
-//            idx++;
-//            cur = s.substring(idx, idx+1);
-//        }
-//        return idx;
-//    }
-//
-//    private static int index_of_next_vowel(String s, int idx) {
-//        int tmp = -1;
-//        String[] vowel = {"a", "e", "i", "o", "u", "y"};
-//        for(String v : vowel){
-//            int cur = s.indexOf(v, idx);
-//            if((tmp == -1 || cur < tmp) && cur != -1) tmp = cur;
-//        }
-//        return tmp;
-//    }
-
-
     //getters and setters:
     public String getSentence() {
         return sentence;
