@@ -36,7 +36,7 @@ public class main {
         return syllables;
     }
 
-    private static int getSyllablesFromString(String thisWord) {
+    public static int getSyllablesFromString(String thisWord) {
         ArrayList<String> vowelChains = getVowelChains(thisWord);
         int syllables = vowelChains.size();
         if(vowelChains.size()==0)return 1;
@@ -51,7 +51,7 @@ public class main {
         return syllables;
     }
 
-    private static int syllablesForEd(String thisWord, ArrayList<String> vowelChains) {
+    public static int syllablesForEd(String thisWord, ArrayList<String> vowelChains) {
 
         if(thisWord.length()>5){
             if(!containsVowel(thisWord.substring(thisWord.length()-5, thisWord.length()-2))&&thisWord.substring(thisWord.length()-2).equals("ed"))return 0;
