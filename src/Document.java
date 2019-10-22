@@ -75,8 +75,7 @@ public class Document {
     }
 
     public double get_kincaid_score(){
-        double syl_factor = 0.88387613271; //this is to get a better score due to a bad syllable function
-        return 206.835-1.015*get_avg_words_per_sentence()-84.6*get_avg_syl_per_word()*syl_factor;
+        return 206.835-1.015*get_avg_words_per_sentence()-84.6*get_avg_syl_per_word();
     }
 
     public int count_occurences(String t){
