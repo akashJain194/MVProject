@@ -110,7 +110,7 @@ public class WordBucket {
 
     private ArrayList<WordBucket> sortOneStep(ArrayList<WordBucket> bucketList) {
         ArrayList<WordBucket> newList = new ArrayList<>();
-        if (bucketList.size() % 2 != 0) {
+        if (bucketList.size() % 2 != 0) { //TODO: What does this if-statement do?
 
         }
         for (int i = 0; i < bucketList.size(); i += 2) {
