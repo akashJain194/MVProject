@@ -124,11 +124,20 @@ public class WordBucket {
 
         WordBucket newBucket = new WordBucket();
         int aLoc = 0, bLoc = 0;
-        while (aLoc < a.size() || bLoc < b.size()) ;
-        if (a.getWord(aLoc).getFrequency() > b.getWord(bLoc).getFrequency()) {
+        while (aLoc < a.size() && bLoc < b.size()) {
+            if (a.getWord(aLoc).getFrequency() > b.getWord(bLoc).getFrequency()) {
+                newBucket.add(a.getWord(aLoc));
+                aLoc++;
+            } else {
+                newBucket.add(b.getWord(bLoc));
+                bLoc++;
+            }
+        }
+        while(aLoc<a.size()){
             newBucket.add(a.getWord(aLoc));
             aLoc++;
-        } else {
+        }
+        while(bLoc<b.size()){
             newBucket.add(b.getWord(bLoc));
             bLoc++;
         }
