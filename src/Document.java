@@ -190,8 +190,10 @@ public class Document {
     }
 
     public double get_percent_formal() {
+
     }
 
     public double get_percent_informal() {
+
     }
 }
