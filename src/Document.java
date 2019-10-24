@@ -173,4 +173,13 @@ public class Document {
     public ArrayList<String> getUnique_words() {
         return unique_words;
     }
+
+    public double get_multi_syllabic_percent() {
+    }
+
+    public double get_percent_formal() {
+    }
+
+    public double get_percent_informal() {
+    }
 }

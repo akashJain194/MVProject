@@ -29,14 +29,13 @@ public class main {
     }
     //TODO: figure out what the a, b, c, d constants need to be so we can scale it to 10
     //TODO: add flesch kincaid score
-/* TODO: FINISH THIS METHOD-->
+    //TODO: FINISH THIS METHOD-->
 
     public boolean isProfessional(Document response){
-        int a, b, c, d; //factors for the equation
-        return (response.get_multi_syllabic_percent()*a + b*response.get_formal() - c*response.get_informal()
-        + d*response.get_kincaid_score()) >= 5;
+        double a = 2.0, b = 2.0, c = 1.0, d = 0.05; //factors for the equation
+        return (response.get_multi_syllabic_percent()*a + b*response.get_percent_formal() - c*response.get_percent_informal()
+        + d*(100-response.get_kincaid_score())) >= 5;
     }
-*/
 
     private static ArrayList<Integer> getSyllableList(ArrayList<Word> testWords) {
         ArrayList<Integer> syllables = new ArrayList<>();
