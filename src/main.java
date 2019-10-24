@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
-    public ArrayList<String> formal_words, informal_words;
+    public static ArrayList<String> formal_words, informal_words;
     public static void main(String[] args) {
 
     } //TODO: Add a parse file method so we can parse the datafiles
