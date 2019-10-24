@@ -40,7 +40,7 @@ public class main {
     private static ArrayList<Integer> getSyllableList(ArrayList<Word> testWords) {
         ArrayList<Integer> syllables = new ArrayList<>();
         for (int i = 0; i < testWords.size(); i++) {
-            String thisWord = testWords.get(i).getLetters();
+            String thisWord = testWords.get(i).getWord();
 
             syllables.add(getSyllablesFromString(thisWord));
         }
