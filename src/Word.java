@@ -8,7 +8,7 @@ public class Word {
     public int getSyllables(){
         return syllables;
     }
-    public String getLetters(){
+    public String getWord(){
         return word;
     }
 }

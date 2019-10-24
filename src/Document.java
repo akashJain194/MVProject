@@ -49,7 +49,7 @@ public class Document {
         int chars = 0;
         for(Sentence sen : sentences){
             for(Word word: sen.getWords()){
-                chars += word.getLetters().length();
+                chars += word.getWord().length();
             }
         }
         return chars;
@@ -124,8 +124,8 @@ public class Document {
     public ArrayList<String> get_unique_words(){
         ArrayList<String> ret = new ArrayList<String>();
         for(Sentence sen : sentences){
-            for(String word : sen.getWords()){
-                if(!ret.contains(word)) ret.add(word);
+            for(Word word : sen.getWords()){
+                if(!ret.contains(word)) ret.add(word.getWord());
             }
         }
         return ret;
