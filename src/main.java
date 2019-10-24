@@ -27,8 +27,8 @@ public class main {
         if (percentOfAnswer >= thresholdForRelevance) return true;
         else return false;
     }
-    //TODO: figure out what the a, b, c, d constants need to be so we can scale it to 10
-    //TODO: add flesch kincaid score
+
+    //TODO: Finish Writing the methods nested in the isProfessional()
 
     public boolean isProfessional(Document response){
         double a = 2.0, b = 2.0, c = 1.0, d = 0.05; //factors for the equation
