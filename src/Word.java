@@ -1,15 +1,15 @@
 public class Word {
     private int syllables;
-    private String letters;
+    private String word;
     public Word(String letters, int syllables){
-        this.letters=letters;
+        this.word=letters;
         this.syllables=syllables;
     }
     public int getSyllables(){
         return syllables;
     }
     public String getLetters(){
-        return letters;
+        return word;
     }
 }
 

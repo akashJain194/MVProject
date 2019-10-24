@@ -9,6 +9,8 @@ public class Document {
     private String text;
     private ArrayList<Sentence> sentences;
     private ArrayList<String> unique_words;
+    //TODO: Initialize the word bucket with the "key words"
+    private WordBucket key_words;
 
     private int word_count, syl_count, char_count;
 
@@ -41,14 +43,13 @@ public class Document {
         int sc = 0;
         for(Sentence sen : sentences) sc += sen.getSyllable_count();
         return sc;
-
     }
 
     public int find_char_count(){
         int chars = 0;
         for(Sentence sen : sentences){
-            for(String word: sen.getWords()){
-                chars += word.length();
+            for(Word word: sen.getWords()){
+                chars += word.getLetters().length();
             }
         }
         return chars;
@@ -175,6 +176,17 @@ public class Document {
     }
 
     public double get_multi_syllabic_percent() {
+        return (1.0*multi_syllable_count()/syl_count);
+    }
+
+    private int multi_syllable_count() {
+        int sc = 0;
+        for(Sentence sen : sentences) {
+            for(Word w : sen.getWords()){
+                if(w.getSyllables() > 1) sc++;
+            }
+        }
+        return sc;
     }
 
     public double get_percent_formal() {

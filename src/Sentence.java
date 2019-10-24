@@ -3,14 +3,14 @@ import java.util.ArrayList;
 
 public class Sentence {
     private String sentence;
-    private ArrayList<String> words;
+    private ArrayList<Word> words;
     private int word_count, syllable_count;
 
     public Sentence(String sen){ //constructor
         sentence = sen;
         words = break_sentence_into_words(sen);
         word_count = count(" ")+1-count(" – ");
-        syllable_count = num_syl(words);
+        syllable_count = num_syl();
     }
 
     //methods:
@@ -23,23 +23,23 @@ public class Sentence {
         return cnt;
     }
 
-    private ArrayList<String> break_sentence_into_words(String sen) { //change some technicalities depending on the text
-        ArrayList<String> ret = new ArrayList<String>();
+    private ArrayList<Word> break_sentence_into_words(String sen) { //change some technicalities depending on the text
+        ArrayList<Word> ret = new ArrayList<Word>();
         String other = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String[] words = sen.split(" ");
         for (String x:words) {
             if(!x.equals("– ")) continue;
             if(!other.contains(x.substring(0, 1))) x = x.substring(1);
             if(!other.contains(x.substring(x.length()-1))) x = x.substring(0, x.length()-1);
-            ret.add(x.toLowerCase());
+            ret.add(new Word(x.toLowerCase(), syllables(x)));
         }
         return ret;
     }
 
-    private int num_syl(ArrayList<String> words) {
+    private int num_syl() {
         int tot = 0;
-        for(String w : words){
-            tot += syllables(w);
+        for(Word w : words){
+            tot += w.getSyllables();
         }
         return tot;
     }
@@ -53,7 +53,7 @@ public class Sentence {
         return sentence;
     }
 
-    public ArrayList<String> getWords() {
+    public ArrayList<Word> getWords() {
         return words;
     }
 
