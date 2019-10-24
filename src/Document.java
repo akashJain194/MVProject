@@ -190,8 +190,22 @@ public class Document {
     }
 
     public double get_percent_formal() {
+        int cnt = 0;
+        for(WordFreq x : key_words.getWords()){
+            for(String formal : main.formal_words){
+                if(x.equals(formal)) cnt += x.getFrequency();
+            }
+        }
+        return (1.0*cnt)/word_count;
     }
 
     public double get_percent_informal() {
+        int cnt = 0;
+        for(WordFreq x : key_words.getWords()){
+            for(String informal : main.informal_words){
+                if(x.equals(informal)) cnt += x.getFrequency();
+            }
+        }
+        return (1.0*cnt)/word_count;
     }
 }
