@@ -4,8 +4,10 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class main {
     public static ArrayList<String> formal_words, informal_words;
+
     public static void main(String[] args) {
 
     } //TODO: Add a parse file method so we can parse the datafiles
@@ -31,10 +33,10 @@ public class main {
 
     //TODO: Finish Writing the methods nested in the isProfessional()
 
-    public boolean isProfessional(Document response){
+    public boolean isProfessional(Document response) {
         double a = 2.0, b = 2.0, c = 1.0, d = 0.05; //factors for the equation
-        return (response.get_multi_syllabic_percent()*a + b*response.get_percent_formal() - c*response.get_percent_informal()
-        + d*(100-response.get_kincaid_score())) >= 5;
+        return (response.get_multi_syllabic_percent() * a + b * response.get_percent_formal() - c * response.get_percent_informal()
+                + d * (100 - response.get_kincaid_score())) >= 5;
     }
 
     private static ArrayList<Integer> getSyllableList(ArrayList<Word> testWords) {
