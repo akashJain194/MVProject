@@ -1,22 +1,23 @@
+import javax.print.Doc;
 import java.util.ArrayList;
 
 public class QuestionAndAnswers {
-    private String question;
-    private ArrayList<String> answers;
+    private Document question;
+    private ArrayList<Document> answers;
 
-    public QuestionAndAnswers(String question) {
+    public QuestionAndAnswers(Document question) {
         this.question = question;
     }
 
-    private ArrayList<String> getAnswers(String[] qAndA) {
+    private ArrayList<Document> getAnswers() {
         return this.answers;
     }
 
-    private String getQuestion(String[] qAndA) {
+    private Document getQuestion() {
         return this.question;
     }
 
-    private void addAnswer(String answer) {
+    private void addAnswer(Document answer) {
         this.answers.add(answer);
     }
 }

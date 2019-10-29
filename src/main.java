@@ -17,14 +17,16 @@ public class main {
         ArrayList<QuestionAndAnswers> questionAndAnswersList = makeQuestionAndAnswersList(dataset);
         for (int i = 0; i < dataset.length; i++) {
             System.out.println(dataset[i]);
-
         }
     } //TODO: Add a parse file method so we can parse the datafiles
 
     private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
-        ArrayList<QuestionAndAnswers> a = new ArrayList<>();
-        return a;
+        ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
+        Document temp = new Document(dataset[1]);
     }
+
+
+
 
     public static String[] readFileAsString(String filename) {
         Scanner scanner;
