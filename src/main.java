@@ -25,9 +25,6 @@ public class main {
         Document temp = new Document(dataset[1]);
     }
 
-
-
-
     public static String[] readFileAsString(String filename) {
         Scanner scanner;
         StringBuilder output = new StringBuilder();
