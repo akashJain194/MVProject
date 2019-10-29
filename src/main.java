@@ -13,6 +13,8 @@ public class main {
     } //TODO: Add a parse file method so we can parse the datafiles
 
 
+
+
     public boolean relevance(WordBucket questionWords, WordBucket answerWords) {
         int count = 0;
         double thresholdForRelevance = 0.10;
