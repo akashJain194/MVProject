@@ -8,10 +8,12 @@ import java.util.Scanner;
 
 public class main {
     public static ArrayList<String> formal_words, informal_words;
+    public static ArrayList<String> dataset;
 
     public static void main(String[] args) {
         formal_words = read_file_as_list("texts/formal_words");
         informal_words = read_file_as_list("texts/informal_words");
+        dataset = read_dataset_as_text("texts/test data set updated - test data set updated.csv");
     } //TODO: Add a parse file method so we can parse the datafiles
 
     public static String readFileAsString(String filename) {
