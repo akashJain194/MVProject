@@ -31,6 +31,8 @@ public class main {
         return output;
     }
 
+
+
     public boolean relevance(WordBucket questionWords, WordBucket answerWords) {
         int count = 0;
         double thresholdForRelevance = 0.10;
