@@ -14,6 +14,26 @@ public class main {
         informal_words = read_file_as_list("texts/informal_words");
     } //TODO: Add a parse file method so we can parse the datafiles
 
+    public static String readFileAsString(String filename) {
+        Scanner scanner;
+        StringBuilder output = new StringBuilder();
+
+        try {
+            scanner = new Scanner(new FileInputStream(filename), "UTF-8");
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                output.append(line.trim()+"\n");
+            }
+
+            scanner.close();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found " + filename);
+        }
+
+        return output.toString();
+    }
+
     public static ArrayList<String> read_file_as_list(String filename) {
         Scanner scanner;
         ArrayList<String> output = new ArrayList<String>();
