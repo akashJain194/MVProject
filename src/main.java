@@ -10,7 +10,7 @@ public class main {
     public static ArrayList<String> formal_words, informal_words;
 
     public static void main(String[] args) {
-        formal_words = read_file_as_list("texts/formal_words.txt");
+        formal_words = read_file_as_list("texts/formal_words");
     } //TODO: Add a parse file method so we can parse the datafiles
 
     public static ArrayList<String> read_file_as_list(String filename) {
