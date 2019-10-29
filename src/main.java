@@ -1,3 +1,4 @@
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Array;
@@ -9,9 +10,26 @@ public class main {
     public static ArrayList<String> formal_words, informal_words;
 
     public static void main(String[] args) {
-
+        formal_words = read_file_as_list("informal_words.txt");
     } //TODO: Add a parse file method so we can parse the datafiles
 
+    public static ArrayList<String> read_file_as_list(String filename) {
+        Scanner scanner;
+        ArrayList<String> output = new ArrayList<String>();
+
+        try {
+            scanner = new Scanner(new FileInputStream(filename), "UTF-8");
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                output.add(line.trim());
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found " + filename);
+        }
+
+        return output;
+    }
 
     public boolean relevance(WordBucket questionWords, WordBucket answerWords) {
         int count = 0;
