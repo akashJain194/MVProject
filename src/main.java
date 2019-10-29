@@ -31,8 +31,6 @@ public class main {
         else return false;
     }
 
-    //TODO: Finish Writing the methods nested in the isProfessional()
-
     public boolean isProfessional(Document response){
         double a = 2.0, b = 2.0, c = 1.0, d = 0.05; //factors for the equation
         return (response.get_multi_syllabic_percent() * a + b * response.get_percent_formal() - c * response.get_percent_informal()
