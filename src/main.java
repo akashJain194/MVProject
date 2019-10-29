@@ -8,32 +8,41 @@ import java.util.Scanner;
 
 public class main {
     public static ArrayList<String> formal_words, informal_words;
-    public static ArrayList<String> dataset;
+    public static String[] dataset;
 
     public static void main(String[] args) {
         formal_words = read_file_as_list("texts/formal_words");
         informal_words = read_file_as_list("texts/informal_words");
-        dataset = read_dataset_as_text("texts/test data set updated - test data set updated.csv");
+        dataset = readFileAsString("texts/test data set updated - test data set updated.csv");
+        ArrayList<QuestionAndAnswers> questionAndAnswersList = makeQuestionAndAnswersList(dataset);
+        for (int i = 0; i < dataset.length; i++) {
+            System.out.println(dataset[i]);
+
+        }
     } //TODO: Add a parse file method so we can parse the datafiles
 
-    public static String readFileAsString(String filename) {
+    private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
+        ArrayList<QuestionAndAnswers> a = new ArrayList<>();
+        return a;
+    }
+
+    public static String[] readFileAsString(String filename) {
         Scanner scanner;
         StringBuilder output = new StringBuilder();
-
         try {
             scanner = new Scanner(new FileInputStream(filename), "UTF-8");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                output.append(line.trim()+"\n");
+                output.append(line.trim() + "\n");
             }
-
             scanner.close();
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found " + filename);
         }
-
-        return output.toString();
+        String newOutput = output.toString();
+        String[] qAndA = newOutput.split("\"");
+        return qAndA;
     }
 
     public static ArrayList<String> read_file_as_list(String filename) {
@@ -55,7 +64,6 @@ public class main {
     }
 
 
-
     public boolean relevance(WordBucket questionWords, WordBucket answerWords) {
         int count = 0;
         double thresholdForRelevance = 0.10;
@@ -74,7 +82,7 @@ public class main {
         else return false;
     }
 
-    public boolean isProfessional(Document response){
+    public boolean isProfessional(Document response) {
         double a = 2.0, b = 2.0, c = 1.0, d = 0.05; //factors for the equation
         return (response.get_multi_syllabic_percent() * a + b * response.get_percent_formal() - c * response.get_percent_informal()
                 + d * (100 - response.get_kincaid_score())) >= 5;
