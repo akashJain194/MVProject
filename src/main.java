@@ -23,7 +23,8 @@ public class main {
     private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
         ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
         Document temp = new Document(dataset[1]);
-
+        //TODO: initialize the values below
+        int ans1, ans2, ans3, ans4, ans5, ans6, ans7; //these are the number of answers per question
 
     }
 
