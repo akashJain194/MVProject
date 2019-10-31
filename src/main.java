@@ -41,6 +41,7 @@ public class main {
                 ans.clear();
             }
         }
+        return qAndAs;
     }
 
     public static String[] readFileAsString(String filename) {
