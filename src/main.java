@@ -30,6 +30,7 @@ public class main {
             if (isques) {
                 //process question
                 cur = new Document(dataset[i]);
+                isques = false;
                 continue;
             }
             //process ans
