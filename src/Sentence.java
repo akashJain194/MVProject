@@ -45,7 +45,7 @@ public class Sentence {
     }
 
     private static int syllables(String s) { //get syllables of s
-        return Main.getSyllablesFromString(s);
+        return main.getSyllablesFromString(s);
     }
 
     //getters and setters:

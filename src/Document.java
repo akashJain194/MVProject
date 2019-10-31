@@ -206,7 +206,7 @@ public class Document {
     public double get_percent_formal() {
         int cnt = 0;
         for(WordFreq x : key_words.getWords()){
-            for(String formal : Main.formal_words){
+            for(String formal : main.formal_words){
                 if(x.equals(formal)) cnt += x.getFrequency();
             }
         }
@@ -216,7 +216,7 @@ public class Document {
     public double get_percent_informal() {
         int cnt = 0;
         for(WordFreq x : key_words.getWords()){
-            for(String informal : Main.informal_words){
+            for(String informal : main.informal_words){
                 if(x.equals(informal)) cnt += x.getFrequency();
             }
         }

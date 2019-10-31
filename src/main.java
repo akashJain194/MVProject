@@ -66,6 +66,7 @@ public class main {
             scanner = new Scanner(new FileInputStream(filename), "UTF-8");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
+
                 output.append(line.trim() + "\n");
             }
             scanner.close();
