@@ -17,7 +17,7 @@ public class QuestionAndAnswers {
         return this.question;
     }
 
-    private void addAnswer(Document answer) {
+    public void addAnswer(Document answer) {
         this.answers.add(answer);
     }
 }
