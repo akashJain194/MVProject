@@ -21,19 +21,15 @@ public class main {
             for (int j = 0; j < thisQandA.getAnswers().size(); j++) {
                 Document thisAnswer = thisQandA.getAnswer(j);
                 System.out.println(thisAnswer.toString());
-                System.out.println("relevance: " + relevance(thisQandA.getQuestion().getKey_words(), thisAnswer.getKey_words()));
-                System.out.println("isProfessional: " + isProfessional(thisAnswer));
-
+                System.out.println("");
             }
-            System.out.println();
-
         }
 
     } //TODO: if time then parse big dataset
 
     private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
         ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
-        int ans1 = 12 + 1, ans2 = 10 + ans1, ans3 = 8 + ans2, ans4 = 6 + ans3, ans5 = 9 + ans4, ans6 = 25 + ans5, ans7 = 5 + ans6;
+        int ans1 = 12+1, ans2 = 10+ans1, ans3 = 8+ans2, ans4 = 6+ans3, ans5 = 9+ans4, ans6 = 25+ans5, ans7 = 5+ans6;
         boolean isques = true;
         ArrayList<Document> ans = new ArrayList<Document>();
         Document cur = new Document(dataset[1]);
@@ -97,7 +93,7 @@ public class main {
 //
 //        }
 //    }
-    public static boolean relevance(WordBucket questionWords, WordBucket answerWords) {
+    public boolean relevance(WordBucket questionWords, WordBucket answerWords) {
         int count = 0;
         double thresholdForRelevance = 0.10;
         ArrayList<WordFreq> qWords = questionWords.getWords();
@@ -112,10 +108,10 @@ public class main {
         }
         double percentOfAnswer = (double) (count) / aWords.size();
         if (percentOfAnswer >= thresholdForRelevance) return true;
-        return false;
+        else return false;
     }
 
-    public static boolean isProfessional(Document response) {
+    public boolean isProfessional(Document response) {
         double a = 2.0, b = 2.0, c = 1.0, d = 0.05; //factors for the equation
         return (response.get_multi_syllabic_percent() * a + b * response.get_percent_formal() - c * response.get_percent_informal()
                 + d * (100 - response.get_kincaid_score())) >= 5;

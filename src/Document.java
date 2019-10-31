@@ -19,6 +19,13 @@ public class Document {
         Document d = new Document(text);
         return d;
     }
+    public String toString() {
+        return text;
+    }
+
+    public WordBucket getKey_words() {
+        return key_words;
+    }
 
     public Document(String text){
         this.text = text;
@@ -30,6 +37,7 @@ public class Document {
         word_count = find_word_count();
         syl_count = find_syl_count();
         char_count = find_char_count();
+        key_words = new WordBucket(unique_words);
     }
 
     //methods:
