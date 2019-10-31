@@ -30,9 +30,13 @@ public class Document {
     public Document(String text){
         this.text = text;
         //pre-processing
-        sentences = splitIntoSentences(text);
-        unique_words = get_unique_words();
-
+        sentences = new ArrayList<>();
+        try {
+            sentences = splitIntoSentences(text);
+            unique_words = get_unique_words();
+        } catch ( NullPointerException e){
+            //sentences.add(text);
+        }
         //calculating other important information
         word_count = find_word_count();
         syl_count = find_syl_count();

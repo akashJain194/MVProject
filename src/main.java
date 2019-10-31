@@ -14,6 +14,7 @@ public class main {
         formal_words = read_file_as_list("texts/formal_words");
         informal_words = read_file_as_list("texts/informal_words");
         dataset = readFileAsString("texts/test data set updated - test data set updated.csv");
+
         ArrayList<QuestionAndAnswers> questionAndAnswersList = makeQuestionAndAnswersList(dataset);
 /*        for (int i = 0; i < questionAndAnswersList.size(); i++) {
             QuestionAndAnswers thisQandA = questionAndAnswersList.get(i);
@@ -36,12 +37,14 @@ public class main {
     } //TODO: if time then parse big dataset
 
     private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
+        dataset = findImportantLines(dataset);
+        System.out.println(dataset.length);
         ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
-        int ans1 = 12 + 1, ans2 = 10 + ans1, ans3 = 8 + ans2, ans4 = 6 + ans3, ans5 = 9 + ans4, ans6 = 25 + ans5, ans7 = 5 + ans6;
-        boolean isques = true;
+        int ans1 = 12, ans2 = 10+ 1 + ans1, ans3 = 8 +1+ ans2, ans4 = 6+1 + ans3, ans5 = 9+1 + ans4, ans6 = 25+1 + ans5, ans7 = 5+1 + ans6;
+        boolean isques = false;
         ArrayList<Document> ans = new ArrayList<Document>();
-        Document cur = new Document(dataset[1]);
-        for (int i = 2; i < dataset.length; i++) {
+        Document cur = new Document(dataset[0]);
+        for (int i = 1; i < dataset.length; i++) {
             if (isques) {
                 //process question
                 cur = new Document(dataset[i]);
@@ -57,6 +60,19 @@ public class main {
             }
         }
         return qAndAs;
+    }
+
+    private static String[] findImportantLines(String[] dataset) {
+        ArrayList<String > importantLines = new ArrayList();
+        for (int i = 0; i < dataset.length; i++) {
+            if(dataset[i].length()>10) importantLines.add(dataset[i]);
+
+        }
+        String[] output = new String[importantLines.size()];
+        for (int i = 0; i < importantLines.size(); i++) {
+            dataset[i] =  importantLines.get(i);
+        }
+        return output;
     }
 
     public static String[] readFileAsString(String filename) {
