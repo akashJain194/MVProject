@@ -28,21 +28,21 @@ public class main {
         ans2 = 10;
         ans3 = 8;
         ans4 = 6;
-                ans5 = 9;
-                        ans6 = 25;
-                                ans7 = 5;
+        ans5 = 9;
+        ans6 = 25;
+        ans7 = 5;
         boolean isques = true;
         ArrayList<Document> ans = new ArrayList<Document>();
         Document cur = new Document(dataset[1]);
-        for(int i = 2; i < dataset.length; i++){
-            if(isques){
+        for (int i = 2; i < dataset.length; i++) {
+            if (isques) {
                 //process question
                 cur = new Document(dataset[i]);
                 continue;
             }
             //process ans
             ans.add(new Document(dataset[i]));
-            if(i == ans1 || i == ans2 ||i == ans3 ||i == ans4 ||i == ans5 ||i == ans6 ||i == ans7){
+            if (i == ans1 || i == ans2 || i == ans3 || i == ans4 || i == ans5 || i == ans6 || i == ans7) {
                 qAndAs.add(new QuestionAndAnswers(cur, ans));
                 isques = true;
                 ans.clear();
