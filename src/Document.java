@@ -37,7 +37,13 @@ public class Document {
         word_count = find_word_count();
         syl_count = find_syl_count();
         char_count = find_char_count();
-        key_words = new WordBucket(unique_words);
+        ArrayList<String> words = new ArrayList<String>();
+        for(Sentence sen : sentences){
+            for(Word word : sen.getWords()){
+                words.add(word.getWord());
+            }
+        }
+        key_words = new WordBucket(words);
     }
 
     //methods:

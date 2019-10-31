@@ -28,6 +28,7 @@ public class main {
             System.out.println();
 
         }
+        System.out.println(isProfessional(questionAndAnswersList.get(0).getQuestion()));
 
     } //TODO: if time then parse big dataset
 
