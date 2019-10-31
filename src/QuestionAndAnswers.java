@@ -10,15 +10,18 @@ public class QuestionAndAnswers {
         answers = ans;
     }
 
-    private ArrayList<Document> getAnswers() {
+    public ArrayList<Document> getAnswers() {
         return this.answers;
     }
 
-    private Document getQuestion() {
+   public Document getQuestion() {
         return this.question;
     }
 
     public void addAnswer(Document answer) {
         this.answers.add(answer);
+    }
+    public Document getAnswer(int index){
+        return answers.get(index);
     }
 }
