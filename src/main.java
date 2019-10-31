@@ -24,6 +24,13 @@ public class main {
         ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
         //TODO: initialize the values below
         int ans1, ans2, ans3, ans4, ans5, ans6, ans7; //these are the number of answers per question
+        ans1 = 12;
+        ans2 = 10;
+        ans3 = 8;
+        ans4 = 6;
+                ans5 = 9;
+                        ans6 = 25;
+                                ans7 = 5;
         boolean isques = true;
         ArrayList<Document> ans = new ArrayList<Document>();
         Document cur = new Document(dataset[1]);
