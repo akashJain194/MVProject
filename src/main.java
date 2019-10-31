@@ -22,7 +22,7 @@ public class main {
 
     private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
         ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
-        int ans1 = 12, ans2 = 10, ans3 = 8, ans4 = 6, ans5 = 9, ans6 = 25, ans7 = 5;
+        int ans1 = 12+1, ans2 = 10+ans1, ans3 = 8+ans2, ans4 = 6+ans3, ans5 = 9+ans4, ans6 = 25+ans5, ans7 = 5+ans6;
         boolean isques = true;
         ArrayList<Document> ans = new ArrayList<Document>();
         Document cur = new Document(dataset[1]);
