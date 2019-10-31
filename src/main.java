@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Main {
+public class main {
     public static ArrayList<String> formal_words, informal_words;
     public static String[] dataset;
 
@@ -15,7 +15,7 @@ public class Main {
         informal_words = read_file_as_list("texts/informal_words");
         dataset = readFileAsString("texts/test data set updated - test data set updated.csv");
         ArrayList<QuestionAndAnswers> questionAndAnswersList = makeQuestionAndAnswersList(dataset);
-        for (int i = 0; i < questionAndAnswersList.size(); i++) {
+/*        for (int i = 0; i < questionAndAnswersList.size(); i++) {
             QuestionAndAnswers thisQandA = questionAndAnswersList.get(i);
             System.out.println(thisQandA.getQuestion().toString());
             for (int j = 0; j < thisQandA.getAnswers().size(); j++) {
@@ -28,7 +28,10 @@ public class Main {
             System.out.println();
 
         }
-        System.out.println(isProfessional(questionAndAnswersList.get(0).getQuestion()));
+        System.out.println(isProfessional(questionAndAnswersList.get(0).getQuestion()));*/
+        for(int i = 1; i < dataset.length; i++){
+            System.out.println("Line "+i+": "+dataset[i]);
+        }
 
     } //TODO: if time then parse big dataset
 
