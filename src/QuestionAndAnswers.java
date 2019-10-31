@@ -5,8 +5,9 @@ public class QuestionAndAnswers {
     private Document question;
     private ArrayList<Document> answers;
 
-    public QuestionAndAnswers(Document question) {
+    public QuestionAndAnswers(Document question, ArrayList<Document> ans) {
         this.question = question;
+        answers = ans;
     }
 
     private ArrayList<Document> getAnswers() {

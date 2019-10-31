@@ -22,10 +22,25 @@ public class main {
 
     private static ArrayList<QuestionAndAnswers> makeQuestionAndAnswersList(String[] dataset) {
         ArrayList<QuestionAndAnswers> qAndAs = new ArrayList<>();
-        Document temp = new Document(dataset[1]);
         //TODO: initialize the values below
         int ans1, ans2, ans3, ans4, ans5, ans6, ans7; //these are the number of answers per question
-
+        boolean isques = true;
+        ArrayList<Document> ans = new ArrayList<Document>();
+        Document cur = new Document(dataset[1]);
+        for(int i = 2; i < dataset.length; i++){
+            if(isques){
+                //process question
+                cur = new Document(dataset[i]);
+                continue;
+            }
+            //process ans
+            ans.add(new Document(dataset[i]));
+            if(i == ans1 || i == ans2 ||i == ans3 ||i == ans4 ||i == ans5 ||i == ans6 ||i == ans7){
+                qAndAs.add(new QuestionAndAnswers(cur, ans));
+                isques = true;
+                ans.clear();
+            }
+        }
     }
 
     public static String[] readFileAsString(String filename) {
